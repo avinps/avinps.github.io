@@ -1,125 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Avin P S | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <!-- Font for modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    body {
       font-family: 'Inter', sans-serif;
     }
-
-    body {
-      background: #f4f4f9;
-      color: #333;
-      line-height: 1.6;
-      padding: 40px;
+    /* Custom scroll for horizontal projects */
+    .project-scroll::-webkit-scrollbar {
+      height: 8px;
     }
-
-    header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #777;
-    }
-
-    section {
-      max-width: 900px;
-      margin: 0 auto 50px;
-      padding: 20px;
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    }
-
-    section h2 {
-      font-size: 1.8rem;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 10px;
-    }
-
-    ul {
-      list-style: none;
-    }
-
-    ul li {
-      margin-bottom: 15px;
-    }
-
-    ul li a {
-      text-decoration: none;
-      color: #1a73e8;
-      font-weight: 600;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      color: #888;
-      margin-top: 60px;
+    .project-scroll::-webkit-scrollbar-thumb {
+      background-color: #4B5563;
+      border-radius: 8px;
     }
   </style>
 </head>
+<body class="bg-white text-gray-800">
 
-<body>
-  <header>
-    <h1>Avin P S</h1>
-    <p>Student | Aspiring Developer | Tech Enthusiast</p>
-  </header>
+  <!-- Navbar -->
+  <nav class="fixed w-full bg-white shadow-md z-50">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold">Avin P S</h1>
+      <ul class="flex space-x-6 text-sm font-semibold">
+        <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
+        <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+        <li><a href="#certifications" class="hover:text-blue-600">Certifications</a></li>
+        <li><a href="#experience" class="hover:text-blue-600">Experience</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-  <section>
-    <h2>About Me</h2>
-    <p>
-      I am a college student passionate about , data science and building modern web applications and constantly learning new technologies. I enjoy turning ideas into real, interactive digital experiences.
+  <!-- Landing Section -->
+  <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-32 bg-gray-100" id="home">
+    <img src="assets/images/your-photo.jpg" alt="Avin P S" class="w-32 h-32 rounded-full mb-4 shadow-md">
+    <h1 class="text-4xl font-bold">Avin P S</h1>
+    <p class="text-xl mt-2">Aspiring Data Scientist</p>
+    <p class="max-w-xl mt-4 text-gray-600">
+      I am a Computer Science Engineering student specializing in Data Science, passionate about building real-world projects and learning every day.
     </p>
+    <div class="mt-6 space-x-4">
+      <a href="assets/AvinPS_CV.pdf" download class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Download CV</a>
+      <a href="#contact" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900">Contact Me</a>
+    </div>
   </section>
 
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li>HTML, CSS, JavaScript</li>
-      <li>Git & GitHub</li>
-      <li>Python</li>
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+      <div class="p-4 bg-gray-100 rounded shadow">Python</div>
+      <div class="p-4 bg-gray-100 rounded shadow">JavaScript</div>
+      <div class="p-4 bg-gray-100 rounded shadow">HTML & CSS</div>
+      <div class="p-4 bg-gray-100 rounded shadow">Pandas</div>
+      <div class="p-4 bg-gray-100 rounded shadow">NumPy</div>
+      <div class="p-4 bg-gray-100 rounded shadow">Machine Learning</div>
+      <div class="p-4 bg-gray-100 rounded shadow">SQL</div>
+      <div class="p-4 bg-gray-100 rounded shadow">Git</div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 px-6 bg-gray-50">
+    <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
+    <div class="overflow-x-auto whitespace-nowrap project-scroll flex space-x-6 px-4">
+      <!-- Project Item Example -->
+      <div class="w-64 bg-white rounded-lg shadow p-4 cursor-pointer" onclick="openModal('Project Title', 'This is a short description of the project.', 'https://example.com')">
+        <img src="assets/images/project1.jpg" alt="Project 1" class="w-full h-32 object-cover rounded">
+        <h3 class="mt-2 text-lg font-semibold">Project Title</h3>
+      </div>
+      <!-- Add more project blocks like above -->
+    </div>
+  </section>
+
+  <!-- Modal for Project Popup -->
+  <div id="projectModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white p-6 rounded-lg w-11/12 max-w-md text-center">
+      <h3 id="modalTitle" class="text-xl font-bold mb-2">Title</h3>
+      <p id="modalDesc" class="mb-4 text-gray-700">Description</p>
+      <a id="modalLink" href="#" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Visit Project</a>
+      <button onclick="closeModal()" class="mt-4 block text-sm text-gray-500 hover:underline">Close</button>
+    </div>
+  </div>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="py-16 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-center">Certifications</h2>
+    <ul class="space-y-4">
+      <li class="flex items-center space-x-4">
+        <img src="assets/images/company1-logo.png" class="w-10 h-10 rounded" alt="Company Logo">
+        <span>Python for Data Science - Company Name</span>
+      </li>
+      <!-- Add more certifications -->
     </ul>
   </section>
 
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li>
-        <a href="https://avinps.github.io/metronome/" target="_blank">🎵 Metronome BPM Detector</a> – Analyzes audio and detects tempo (BPM).
-      </li>
-      <li>
-        <a href="#">📱 Portfolio Website</a> – This website you're viewing, showcasing my work and skills.
+  <!-- Experience Section -->
+  <section id="experience" class="py-16 px-6 max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-center">Experience</h2>
+    <ul class="space-y-4">
+      <!-- Placeholder for future experience -->
+      <li class="flex items-center space-x-4">
+        <img src="assets/images/company-placeholder.png" class="w-10 h-10 rounded" alt="Company Logo">
+        <span>No experience yet. Stay tuned!</span>
       </li>
     </ul>
   </section>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: avinps7@gmail.com</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/avinps" target="_blank">linkedin.com/in/avinps</a></p>
-    <p>GitHub: <a href="https://github.com/avinps">github.com/avinps7</a></p>
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 px-6 bg-gray-100 text-center">
+    <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
+    <div class="flex flex-col items-center space-y-4">
+      <a href="https://linkedin.com/in/avinps7" class="text-blue-600 hover:underline" target="_blank">LinkedIn</a>
+      <a href="https://github.com/avinps" class="text-gray-800 hover:underline" target="_blank">GitHub</a>
+      <a href="mailto:youremail@example.com" class="text-gray-800 hover:underline">youremail@example.com</a>
+    </div>
   </section>
 
-  <footer>
-    &copy; 2025 Avin P S. All rights reserved.
-  </footer>
+  <!-- JavaScript for Modal -->
+  <script>
+    function openModal(title, desc, link) {
+      document.getElementById('modalTitle').innerText = title;
+      document.getElementById('modalDesc').innerText = desc;
+      document.getElementById('modalLink').href = link;
+      document.getElementById('projectModal').classList.remove('hidden');
+      document.getElementById('projectModal').classList.add('flex');
+    }
+
+    function closeModal() {
+      document.getElementById('projectModal').classList.add('hidden');
+      document.getElementById('projectModal').classList.remove('flex');
+    }
+  </script>
+
 </body>
-
 </html>
