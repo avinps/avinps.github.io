@@ -52,6 +52,9 @@
       overflow-x: auto;
       gap: 16px;
       padding: 16px;
+      scroll-snap-type: x mandatory;
+      scroll-padding-left: 16px;
+      scroll-behavior: smooth;
     }
 
     .project-card {
@@ -62,6 +65,7 @@
       padding: 16px;
       cursor: pointer;
       transition: transform 0.3s ease;
+      scroll-snap-align: start;
     }
 
     .project-card:hover {
