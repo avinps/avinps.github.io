@@ -12,7 +12,7 @@
       scroll-behavior: smooth;
     }
     .nav-link {
-      @apply text-white block px-4 py-2 hover:text-yellow-300 transition-colors;
+      @apply text-black block px-4 py-2 hover:text-yellow-600 transition-colors;
     }
     .modal {
       display: none;
@@ -47,7 +47,7 @@
 
 <body class="bg-white text-gray-800 font-sans">
   <!-- Navbar -->
-  <nav class="bg-black text-white fixed w-full z-10">
+  <nav class="bg-white text-black fixed w-full z-10 shadow">
     <div class="container mx-auto flex justify-between items-center px-4 py-3">
       <div class="text-lg font-bold whitespace-nowrap">AVIN P S</div>
       <div class="sm:hidden">
@@ -57,7 +57,7 @@
           </svg>
         </button>
       </div>
-      <div id="menu" class="hidden sm:flex space-x-2 text-sm sm:text-base">
+      <div id="menu" class="hidden sm:flex sm:space-x-4 sm:flex-row flex-col absolute sm:static top-16 left-0 w-full bg-white sm:bg-transparent shadow sm:shadow-none">
         <a href="#home" class="nav-link">HOME</a>
         <a href="#skills" class="nav-link">SKILLS</a>
         <a href="#projects" class="nav-link">PROJECTS</a>
@@ -69,7 +69,7 @@
   </nav>
 
   <!-- Landing Section -->
-  <section id="home" class="min-h-screen flex flex-col items-center justify-center pt-20 text-center px-4">
+  <section id="home" class="min-h-screen flex flex-col items-center justify-center pt-32 text-center px-4">
     <img src="assets/images/your-photo.jpg" alt="Avin P S" class="w-40 h-40 rounded-full mb-4 shadow-lg">
     <h1 class="text-4xl font-bold">Avin P S</h1>
     <h2 class="text-xl text-gray-600">Aspiring Data Scientist</h2>
@@ -83,7 +83,7 @@
   <!-- Skills Section -->
   <section id="skills" class="py-16 bg-gray-50 text-center">
     <h2 class="text-3xl font-bold mb-8">SKILLS</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-4xl mx-auto px-4">
       <div class="p-4 bg-white rounded shadow">Python</div>
       <div class="p-4 bg-white rounded shadow">Data Analysis</div>
       <div class="p-4 bg-white rounded shadow">Machine Learning</div>
