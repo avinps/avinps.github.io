@@ -6,15 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Avin P S | Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
   <style>
     html {
       scroll-behavior: smooth;
     }
     .nav-link {
-      @apply text-white px-3 py-2 hover:text-yellow-300 transition-colors;
+      @apply text-white block px-4 py-2 hover:text-yellow-300 transition-colors;
     }
     .modal {
       @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+    }
+    .modal-content {
+      @apply relative bg-white p-6 rounded shadow max-w-md w-full mx-4;
     }
   </style>
 </head>
@@ -23,8 +27,15 @@
   <!-- Navbar -->
   <nav class="bg-black text-white fixed w-full z-10">
     <div class="container mx-auto flex justify-between items-center px-4 py-3">
-      <div class="text-lg font-bold">AVIN P S</div>
-      <div class="space-x-2 text-sm sm:text-base">
+      <div class="text-lg font-bold whitespace-nowrap">AVIN P S</div>
+      <div class="sm:hidden">
+        <button onclick="toggleMenu()">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+      <div id="menu" class="hidden sm:flex space-x-2 text-sm sm:text-base">
         <a href="#home" class="nav-link">HOME</a>
         <a href="#skills" class="nav-link">SKILLS</a>
         <a href="#projects" class="nav-link">PROJECTS</a>
@@ -66,6 +77,10 @@
         <img src="assets/images/project1.jpg" alt="Project 1" class="w-full h-40 object-cover rounded">
         <h3 class="mt-2 font-semibold">Project 1</h3>
       </div>
+      <div class="w-64 flex-shrink-0 bg-gray-100 p-4 rounded shadow cursor-pointer" onclick="openModal('Project 2', 'Description for Project 2', 'https://example.com')">
+        <img src="assets/images/project2.jpg" alt="Project 2" class="w-full h-40 object-cover rounded">
+        <h3 class="mt-2 font-semibold">Project 2</h3>
+      </div>
     </div>
   </section>
 
@@ -103,26 +118,34 @@
 
   <!-- Modal -->
   <div id="projectModal" class="modal hidden">
-    <div class="bg-white p-6 rounded shadow max-w-md w-full">
+    <div class="modal-content">
+      <button onclick="closeModal()" class="absolute top-2 right-2 text-gray-600 hover:text-red-500">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
       <h3 id="modalTitle" class="text-xl font-bold mb-2">Project Title</h3>
       <p id="modalDescription" class="mb-4">Project description...</p>
       <a id="modalLink" href="#" target="_blank" class="text-blue-600 hover:underline">Visit Project</a>
-      <div class="mt-4 text-right">
-        <button onclick="closeModal()" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Close</button>
-      </div>
     </div>
   </div>
 
-  <!-- JavaScript for Modal -->
+  <!-- JavaScript -->
   <script>
     function openModal(title, description, link) {
       document.getElementById('modalTitle').innerText = title;
       document.getElementById('modalDescription').innerText = description;
       document.getElementById('modalLink').href = link;
       document.getElementById('projectModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
     }
     function closeModal() {
       document.getElementById('projectModal').classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('hidden');
     }
   </script>
 </body>
