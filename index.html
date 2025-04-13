@@ -5,15 +5,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Avin P S | Portfolio</title>
+  <meta name="description" content="Avin P S Portfolio - Aspiring Data Scientist and CSE student.">
+  <meta name="author" content="Avin P S">
+  <meta name="keywords" content="Avin P S, Portfolio, Data Science, Student, Projects, Skills">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/lucide@latest"></script>
   <style>
     html {
       scroll-behavior: smooth;
-    }
-
-    .nav-link {
-      @apply text-black block px-4 py-2 hover:text-yellow-600 text-center transition-colors;
     }
 
     .modal {
@@ -46,7 +45,6 @@
       cursor: pointer;
     }
 
-    /* Projects section styles */
     .projects-wrapper {
       display: flex;
       overflow-x: auto;
@@ -79,38 +77,40 @@
   <nav class="bg-white text-black fixed w-full z-10 shadow">
     <div class="container mx-auto px-4 py-3">
       <div class="flex justify-between items-center sm:hidden">
-        <div class="text-lg font-bold text-center w-full">AVIN P S</div>
+        <div class="text-lg font-bold">AVIN P S</div>
         <button onclick="toggleMenu()">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
+
+      <div id="mobileMenu" class="hidden flex-col items-center sm:hidden mt-2">
+        <a href="#home" class="text-black block px-4 py-2 hover:text-yellow-600 text-center transition-colors">HOME</a>
+        <a href="#skills" class="text-black block px-4 py-2 hover:text-yellow-600 text-center transition-colors">SKILLS</a>
+        <a href="#projects" class="text-black block px-4 py-2 hover:text-yellow-600 text-center transition-colors">PROJECTS</a>
+        <a href="#certifications" class="text-black block px-4 py-2 hover:text-yellow-600 text-center transition-colors">CERTIFICATIONS</a>
+        <a href="#experience" class="text-black block px-4 py-2 hover:text-yellow-600 text-center transition-colors">EXPERIENCE</a>
+        <a href="#contact" class="text-black block px-4 py-2 hover:text-yellow-600 text-center transition-colors">CONTACT</a>
+      </div>
+
       <div class="hidden sm:flex flex-col items-center">
         <div class="text-lg font-bold">AVIN P S</div>
-        <div id="menu" class="flex flex-col sm:flex-row sm:space-x-4 items-center">
-          <a href="#home" class="nav-link">HOME</a>
-          <a href="#skills" class="nav-link">SKILLS</a>
-          <a href="#projects" class="nav-link">PROJECTS</a>
-          <a href="#certifications" class="nav-link">CERTIFICATIONS</a>
-          <a href="#experience" class="nav-link">EXPERIENCE</a>
-          <a href="#contact" class="nav-link">CONTACT</a>
+        <div class="flex flex-col sm:flex-row sm:space-x-4 items-center">
+          <a href="#home" class="text-black block px-4 py-2 hover:text-yellow-600 text-center transition-colors">HOME</a>
+          <a href="#skills" class="text-black block px-4 py-2 hover:text-yellow-600 text-center transition-colors">SKILLS</a>
+          <a href="#projects" class="text-black block px-4 py-2 hover:text-yellow-600 text-center transition-colors">PROJECTS</a>
+          <a href="#certifications" class="text-black block px-4 py-2 hover:text-yellow-600 text-center transition-colors">CERTIFICATIONS</a>
+          <a href="#experience" class="text-black block px-4 py-2 hover:text-yellow-600 text-center transition-colors">EXPERIENCE</a>
+          <a href="#contact" class="text-black block px-4 py-2 hover:text-yellow-600 text-center transition-colors">CONTACT</a>
         </div>
-      </div>
-      <div id="mobileMenu" class="hidden flex-col items-center sm:hidden mt-2">
-        <a href="#home" class="nav-link">HOME</a>
-        <a href="#skills" class="nav-link">SKILLS</a>
-        <a href="#projects" class="nav-link">PROJECTS</a>
-        <a href="#certifications" class="nav-link">CERTIFICATIONS</a>
-        <a href="#experience" class="nav-link">EXPERIENCE</a>
-        <a href="#contact" class="nav-link">CONTACT</a>
       </div>
     </div>
   </nav>
 
   <!-- Landing Section -->
   <section id="home" class="min-h-screen flex flex-col items-center justify-center pt-28 text-center px-4">
-    <img src="assets/images/your-photo.jpg" alt="Avin P S" class="w-40 h-40 rounded-full mb-4 shadow-lg">
+    <img src="assets/images/avin-photo.jpg" alt="Avin P S smiling at camera" class="w-40 h-40 rounded-full mb-4 shadow-lg">
     <h1 class="text-4xl font-bold">Avin P S</h1>
     <h2 class="text-xl text-gray-600">Aspiring Data Scientist</h2>
     <p class="mt-4 max-w-md">I am a Computer Science Engineering student specializing in Data Science, passionate about learning and exploring data-driven solutions.</p>
@@ -121,7 +121,7 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="py-16 bg-gray-50 text-center">
+  <section id="skills" class="py-16 bg-gray-50 text-center px-4">
     <h2 class="text-3xl font-bold mb-6">Skills</h2>
     <div class="flex flex-wrap justify-center gap-6">
       <span class="px-4 py-2 bg-white shadow rounded">Python</span>
@@ -133,41 +133,41 @@
   </section>
 
   <!-- Projects Section -->
-<section id="projects" class="py-16 text-center">
-  <h2 class="text-3xl font-bold mb-6">Projects</h2>
-  <div class="projects-wrapper flex justify-center">
-    <div class="project-card" onclick="openModal('Project 1', 'Description of Project 1', 'https://example.com/project1')">
-      <img src="assets/images/project1.jpg" alt="Project 1" class="w-full h-48 object-cover rounded mb-4">
-      <h3 class="text-xl font-semibold">Project 1</h3>
+  <section id="projects" class="py-16 text-center px-4">
+    <h2 class="text-3xl font-bold mb-6">Projects</h2>
+    <div class="projects-wrapper justify-center">
+      <div class="project-card" onclick="openModal('Project 1', 'Description of Project 1', 'https://example.com/project1')">
+        <img src="assets/images/project1.jpg" alt="Screenshot of Project 1" class="w-full h-48 object-cover rounded mb-4">
+        <h3 class="text-xl font-semibold">Project 1</h3>
+      </div>
+      <div class="project-card" onclick="openModal('Project 2', 'Description of Project 2', 'https://example.com/project2')">
+        <img src="assets/images/project2.jpg" alt="Screenshot of Project 2" class="w-full h-48 object-cover rounded mb-4">
+        <h3 class="text-xl font-semibold">Project 2</h3>
+      </div>
+      <div class="project-card" onclick="openModal('Project 3', 'Description of Project 3', 'https://example.com/project3')">
+        <img src="assets/images/project3.jpg" alt="Screenshot of Project 3" class="w-full h-48 object-cover rounded mb-4">
+        <h3 class="text-xl font-semibold">Project 3</h3>
+      </div>
+      <div class="project-card" onclick="openModal('Project 4', 'Description of Project 4', 'https://example.com/project4')">
+        <img src="assets/images/project4.jpg" alt="Screenshot of Project 4" class="w-full h-48 object-cover rounded mb-4">
+        <h3 class="text-xl font-semibold">Project 4</h3>
+      </div>
     </div>
-    <div class="project-card" onclick="openModal('Project 2', 'Description of Project 2', 'https://example.com/project2')">
-      <img src="assets/images/project2.jpg" alt="Project 2" class="w-full h-48 object-cover rounded mb-4">
-      <h3 class="text-xl font-semibold">Project 2</h3>
-    </div>
-    <div class="project-card" onclick="openModal('Project 3', 'Description of Project 3', 'https://example.com/project3')">
-      <img src="assets/images/project3.jpg" alt="Project 3" class="w-full h-48 object-cover rounded mb-4">
-      <h3 class="text-xl font-semibold">Project 3</h3>
-    </div>
-    <div class="project-card" onclick="openModal('Project 4', 'Description of Project 4', 'https://example.com/project4')">
-      <img src="assets/images/project4.jpg" alt="Project 4" class="w-full h-48 object-cover rounded mb-4">
-      <h3 class="text-xl font-semibold">Project 4</h3>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- Certifications Section -->
-  <section id="certifications" class="py-16 bg-gray-50 text-center">
+  <section id="certifications" class="py-16 bg-gray-50 text-center px-4">
     <h2 class="text-3xl font-bold mb-6">Certifications</h2>
     <ul class="space-y-4">
       <li class="flex items-center justify-center space-x-4">
-        <img src="assets/images/company1-logo.png" class="w-10 h-10" alt="Company 1">
+        <img src="assets/images/company1-logo.png" class="w-10 h-10" alt="Company 1 logo">
         <span>Certification from Company 1</span>
       </li>
     </ul>
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="py-16 text-center">
+  <section id="experience" class="py-16 text-center px-4">
     <h2 class="text-3xl font-bold mb-6">Experience</h2>
     <ul class="space-y-4">
       <li class="flex items-center justify-center space-x-4">
@@ -178,19 +178,19 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 bg-white text-center">
+  <section id="contact" class="py-16 bg-white text-center px-4">
     <h2 class="text-3xl font-bold mb-6">Contact</h2>
     <div class="space-y-4 max-w-md mx-auto">
       <div class="flex items-center justify-center space-x-4">
-        <img src="assets/icons/email-icon.png" class="w-6 h-6" alt="Email">
+        <img src="assets/icons/email-icon.png" class="w-6 h-6" alt="Email icon">
         <p>Email: <a href="mailto:your.email@example.com" class="text-blue-600 hover:underline">your.email@example.com</a></p>
       </div>
       <div class="flex items-center justify-center space-x-4">
-        <img src="assets/icons/github-icon.png" class="w-6 h-6" alt="GitHub">
+        <img src="assets/icons/github-icon.png" class="w-6 h-6" alt="GitHub icon">
         <p>GitHub: <a href="https://github.com/avinps" target="_blank" class="text-blue-600 hover:underline">github.com/avinps</a></p>
       </div>
       <div class="flex items-center justify-center space-x-4">
-        <img src="assets/icons/linkedin-icon.png" class="w-6 h-6" alt="LinkedIn">
+        <img src="assets/icons/linkedin-icon.png" class="w-6 h-6" alt="LinkedIn icon">
         <p>LinkedIn: <a href="https://linkedin.com/in/avinps7" target="_blank" class="text-blue-600 hover:underline">linkedin.com/in/avinps7</a></p>
       </div>
     </div>
@@ -239,6 +239,12 @@
 
     window.addEventListener('DOMContentLoaded', () => {
       closeModal();
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
     });
   </script>
 </body>
