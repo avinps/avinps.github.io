@@ -1,51 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Avin P S | Portfolio</title>
-  <!-- Tailwind CSS CDN -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <!-- Font for modern look -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
+    html {
+      scroll-behavior: smooth;
     }
-    /* Custom scroll for horizontal projects */
-    .project-scroll::-webkit-scrollbar {
-      height: 8px;
+    .nav-link {
+      @apply text-white px-3 py-2 hover:text-yellow-300 transition-colors;
     }
-    .project-scroll::-webkit-scrollbar-thumb {
-      background-color: #4B5563;
-      border-radius: 8px;
+    .modal {
+      @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
     }
   </style>
 </head>
-<body class="bg-white text-gray-800">
 
+<body class="bg-white text-gray-800 font-sans">
   <!-- Navbar -->
-  <nav class="fixed w-full bg-white shadow-md z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <h1 class="text-xl font-bold">Avin P S</h1>
-      <ul class="flex space-x-6 text-sm font-semibold">
-        <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
-        <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
-        <li><a href="#certifications" class="hover:text-blue-600">Certifications</a></li>
-        <li><a href="#experience" class="hover:text-blue-600">Experience</a></li>
-        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
-      </ul>
+  <nav class="bg-black text-white fixed w-full z-10">
+    <div class="container mx-auto flex justify-between items-center px-4 py-3">
+      <div class="text-lg font-bold">AVIN P S</div>
+      <div class="space-x-2 text-sm sm:text-base">
+        <a href="#home" class="nav-link">HOME</a>
+        <a href="#skills" class="nav-link">SKILLS</a>
+        <a href="#projects" class="nav-link">PROJECTS</a>
+        <a href="#certifications" class="nav-link">CERTIFICATIONS</a>
+        <a href="#experience" class="nav-link">EXPERIENCE</a>
+        <a href="#contact" class="nav-link">CONTACT</a>
+      </div>
     </div>
   </nav>
 
   <!-- Landing Section -->
-  <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 pt-32 bg-gray-100" id="home">
-    <img src="assets/images/your-photo.jpg" alt="Avin P S" class="w-32 h-32 rounded-full mb-4 shadow-md">
+  <section id="home" class="min-h-screen flex flex-col items-center justify-center pt-20 text-center px-4">
+    <img src="assets/images/your-photo.jpg" alt="Avin P S" class="w-40 h-40 rounded-full mb-4 shadow-lg">
     <h1 class="text-4xl font-bold">Avin P S</h1>
-    <p class="text-xl mt-2">Aspiring Data Scientist</p>
-    <p class="max-w-xl mt-4 text-gray-600">
-      I am a Computer Science Engineering student specializing in Data Science, passionate about building real-world projects and learning every day.
-    </p>
+    <h2 class="text-xl text-gray-600">Aspiring Data Scientist</h2>
+    <p class="mt-4 max-w-md">I am a Computer Science Engineering student specializing in Data Science, passionate about learning and exploring data-driven solutions.</p>
     <div class="mt-6 space-x-4">
       <a href="assets/AvinPS_CV.pdf" download class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Download CV</a>
       <a href="#contact" class="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900">Contact Me</a>
@@ -53,92 +48,83 @@
   </section>
 
   <!-- Skills Section -->
-  <section id="skills" class="py-16 px-6 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold mb-8 text-center">Skills</h2>
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-      <div class="p-4 bg-gray-100 rounded shadow">Python</div>
-      <div class="p-4 bg-gray-100 rounded shadow">JavaScript</div>
-      <div class="p-4 bg-gray-100 rounded shadow">HTML & CSS</div>
-      <div class="p-4 bg-gray-100 rounded shadow">Pandas</div>
-      <div class="p-4 bg-gray-100 rounded shadow">NumPy</div>
-      <div class="p-4 bg-gray-100 rounded shadow">Machine Learning</div>
-      <div class="p-4 bg-gray-100 rounded shadow">SQL</div>
-      <div class="p-4 bg-gray-100 rounded shadow">Git</div>
+  <section id="skills" class="py-16 bg-gray-50 text-center">
+    <h2 class="text-3xl font-bold mb-8">SKILLS</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+      <div class="p-4 bg-white rounded shadow">Python</div>
+      <div class="p-4 bg-white rounded shadow">Data Analysis</div>
+      <div class="p-4 bg-white rounded shadow">Machine Learning</div>
+      <div class="p-4 bg-white rounded shadow">HTML/CSS/JS</div>
     </div>
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="py-16 px-6 bg-gray-50">
-    <h2 class="text-3xl font-bold mb-8 text-center">Projects</h2>
-    <div class="overflow-x-auto whitespace-nowrap project-scroll flex space-x-6 px-4">
-      <!-- Project Item Example -->
-      <div class="w-64 bg-white rounded-lg shadow p-4 cursor-pointer" onclick="openModal('Project Title', 'This is a short description of the project.', 'https://example.com')">
-        <img src="assets/images/project1.jpg" alt="Project 1" class="w-full h-32 object-cover rounded">
-        <h3 class="mt-2 text-lg font-semibold">Project Title</h3>
+  <section id="projects" class="py-16 bg-white">
+    <h2 class="text-3xl font-bold text-center mb-8">PROJECTS</h2>
+    <div class="flex overflow-x-auto space-x-6 px-4">
+      <div class="w-64 flex-shrink-0 bg-gray-100 p-4 rounded shadow cursor-pointer" onclick="openModal('Project 1', 'Description for Project 1', 'https://example.com')">
+        <img src="assets/images/project1.jpg" alt="Project 1" class="w-full h-40 object-cover rounded">
+        <h3 class="mt-2 font-semibold">Project 1</h3>
       </div>
-      <!-- Add more project blocks like above -->
     </div>
   </section>
 
-  <!-- Modal for Project Popup -->
-  <div id="projectModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-    <div class="bg-white p-6 rounded-lg w-11/12 max-w-md text-center">
-      <h3 id="modalTitle" class="text-xl font-bold mb-2">Title</h3>
-      <p id="modalDesc" class="mb-4 text-gray-700">Description</p>
-      <a id="modalLink" href="#" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Visit Project</a>
-      <button onclick="closeModal()" class="mt-4 block text-sm text-gray-500 hover:underline">Close</button>
-    </div>
-  </div>
-
   <!-- Certifications Section -->
-  <section id="certifications" class="py-16 px-6 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold mb-8 text-center">Certifications</h2>
-    <ul class="space-y-4">
-      <li class="flex items-center space-x-4">
-        <img src="assets/images/company1-logo.png" class="w-10 h-10 rounded" alt="Company Logo">
-        <span>Python for Data Science - Company Name</span>
+  <section id="certifications" class="py-16 bg-gray-50 text-center">
+    <h2 class="text-3xl font-bold mb-8">CERTIFICATIONS</h2>
+    <ul class="space-y-4 max-w-3xl mx-auto">
+      <li class="flex items-center justify-center space-x-4">
+        <img src="assets/images/company1-logo.png" class="w-10 h-10 rounded">
+        <span>Machine Learning - Coursera</span>
       </li>
-      <!-- Add more certifications -->
     </ul>
   </section>
 
   <!-- Experience Section -->
-  <section id="experience" class="py-16 px-6 max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold mb-8 text-center">Experience</h2>
-    <ul class="space-y-4">
-      <!-- Placeholder for future experience -->
-      <li class="flex items-center space-x-4">
-        <img src="assets/images/company-placeholder.png" class="w-10 h-10 rounded" alt="Company Logo">
-        <span>No experience yet. Stay tuned!</span>
+  <section id="experience" class="py-16 bg-white text-center">
+    <h2 class="text-3xl font-bold mb-8">EXPERIENCE</h2>
+    <ul class="space-y-4 max-w-3xl mx-auto">
+      <li class="flex items-center justify-center space-x-4">
+        <img src="assets/images/company-placeholder.png" class="w-10 h-10 rounded">
+        <span>No experience yet – coming soon!</span>
       </li>
     </ul>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="py-16 px-6 bg-gray-100 text-center">
-    <h2 class="text-3xl font-bold mb-8">Contact Me</h2>
-    <div class="flex flex-col items-center space-y-4">
-      <a href="https://linkedin.com/in/avinps7" class="text-blue-600 hover:underline" target="_blank">LinkedIn</a>
-      <a href="https://github.com/avinps" class="text-gray-800 hover:underline" target="_blank">GitHub</a>
-      <a href="mailto:youremail@example.com" class="text-gray-800 hover:underline">youremail@example.com</a>
+  <section id="contact" class="py-16 bg-gray-50 text-center">
+    <h2 class="text-3xl font-bold mb-8">CONTACT</h2>
+    <div class="space-y-4">
+      <p><strong>Email:</strong> <a href="mailto:your.email@example.com" class="text-blue-600">your.email@example.com</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/avinps" target="_blank" class="text-blue-600">github.com/avinps</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/avinps7" target="_blank" class="text-blue-600">linkedin.com/in/avinps7</a></p>
     </div>
   </section>
 
+  <!-- Modal -->
+  <div id="projectModal" class="modal hidden">
+    <div class="bg-white p-6 rounded shadow max-w-md w-full">
+      <h3 id="modalTitle" class="text-xl font-bold mb-2">Project Title</h3>
+      <p id="modalDescription" class="mb-4">Project description...</p>
+      <a id="modalLink" href="#" target="_blank" class="text-blue-600 hover:underline">Visit Project</a>
+      <div class="mt-4 text-right">
+        <button onclick="closeModal()" class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600">Close</button>
+      </div>
+    </div>
+  </div>
+
   <!-- JavaScript for Modal -->
   <script>
-    function openModal(title, desc, link) {
+    function openModal(title, description, link) {
       document.getElementById('modalTitle').innerText = title;
-      document.getElementById('modalDesc').innerText = desc;
+      document.getElementById('modalDescription').innerText = description;
       document.getElementById('modalLink').href = link;
       document.getElementById('projectModal').classList.remove('hidden');
-      document.getElementById('projectModal').classList.add('flex');
     }
-
     function closeModal() {
       document.getElementById('projectModal').classList.add('hidden');
-      document.getElementById('projectModal').classList.remove('flex');
     }
   </script>
-
 </body>
+
 </html>
