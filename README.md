@@ -5,6 +5,7 @@ Welcome to my personal portfolio website! This project showcases my skills, proj
 ## Overview
 
 This portfolio is a fully responsive website built using HTML, Tailwind CSS, and JavaScript. It features interactive sections such as:
+
 	•	Landing Section: Introduction with name, profile image, and call-to-action buttons.
 	•	Skills Section: A grid of technical skills with a clean modern layout.
 	•	Projects Section: Horizontally scrollable project cards with modal popups for details.
