@@ -139,7 +139,7 @@
       <span class="px-4 py-2 bg-white shadow rounded">Statistical & Predictive Modelling</span>
       <span class="px-4 py-2 bg-white shadow rounded">Data Management</span>
       <span class="px-4 py-2 bg-white shadow rounded">Python</span>
-      <span class="px-4 py-2 bg-white shadow rounded">Web & Software Development</span>
+      <span class="px-4 py-2 bg-white shadow rounded">Web Development</span>
     </div>
   </section>
 
@@ -147,6 +147,14 @@
   <section id="projects" class="py-16 text-center px-4 overflow-x-hidden">
     <h2 class="text-3xl font-bold mb-6">Projects</h2>
     <div class="projects-wrapper justify-start">
+      <div class="project-card" onclick="openModal('KTU Result Pdf Analyser', '-> The KTU Result Analyser is an academic intelligence tool designed to streamline result analysis by instantly transforming official KTU result PDFs into actionable insights, grade distribution charts, and automated SGPA calculations. \n-> Built with a modern React tech stack for secure local processing, and is integrated with AI Data Analyst powered by Google\'s Gemini models. This context-aware assistant acts as an expert academic consultant, allowing users to ask complex questions about subject performance and student trends while ensuring strict data privacy through anonymized processing.\n-> Technologies used: React, TypeScript, Vite, Tailwind CSS, Recharts, Lucide React, pdfjs-dist, React Markdown, Google Generative AI,  Vercel', 'https://ktu-result-analyzer.vercel.app/')">
+        <img src="assets/images/project4.png" alt="Screenshot of Project 4" class="w-full h-48 object-cover rounded mb-4">
+        <h3 class="text-xl font-semibold">KTU Result Pdf Analyser</h3>
+      </div>
+      <div class="project-card" onclick="openModal('SpaceX Falcon 9 Landing Success Prediction', 'This project analyzes historical SpaceX Falcon 9 launch data to predict whether the first-stage booster will successfully land. Successful landings are critical for rocket reusability and cost reduction. \nThe project follows the complete data science lifecycle: Data Collection → Data Wrangling → EDA → SQL Analysis → Interactive Visualization → Machine Learning. \nThis project was completed as part of the IBM Data Science Professional Certificate Capstone. \nTechnologies Used: Python, Pandas, NumPy, Matplotlib, Seaborn, SQL (SQLite), Folium, Plotly Dash, Scikit-learn, REST APIs, Web Scraping (BeautifulSoup)', 'https://github.com/avinps/IBM-DataScience-CapstoneProject')">
+        <img src="assets/images/project5.png" alt="Screenshot of Project 5" class="w-full h-48 object-cover rounded mb-4">
+        <h3 class="text-xl font-semibold">SpaceX Falcon 9 Landing Success Prediction - IBM Data Science Course Capstone Project</h3>
+      </div>
       <div class="project-card" onclick="openModal('House Price Predictor', 'This is a Python project that uses a Decision Tree machine learning model to predict house sale prices based on features like living area, number of bedrooms, and year built.', 'https://github.com/avinps/house_price_predictor')">
         <img src="assets/images/project3.jpg" alt="Screenshot of Project 3" class="w-full h-48 object-cover rounded mb-4">
         <h3 class="text-xl font-semibold">House Price Predictor</h3>
@@ -168,7 +176,7 @@
     <ul class="space-y-4">
       <li class="flex items-center justify-center space-x-4">
         <img src="assets/images/company1-logo.png" class="w-10 h-10" alt="IBM logo">
-        <span>IBM Data Science Professional Certificate</span>
+        <a href="assets/IBM-DS.jpg" target="_blank" class="text-blue-600 hover:underline hover:text-blue-800 transition-colors">IBM Data Science Professional Certificate</a>
       </li>
     </ul>
   </section>
