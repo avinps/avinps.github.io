@@ -565,7 +565,7 @@
       gap: 1.25rem;
       padding: 1.25rem 1.5rem;
       max-width: 550px;
-      margin: 0 auto;
+      margin: 1rem auto;
       text-decoration: none;
       color: var(--text-primary);
       cursor: pointer;
@@ -1117,6 +1117,23 @@
         <div class="projects-grid">
 
           <div class="project-card" onclick="openModal({
+            title: 'XAI Review Insights — Explainable Sentiment Analytics',
+            desc: 'An explainable AI system that analyses customer product reviews and turns model predictions into clear, actionable business insights. Combines NLP sentiment classification with SHAP explanations to show not just what customers feel, but why.',
+            points: ['Trained and compared Logistic Regression, Random Forest and XGBoost sentiment classifiers on 190,000+ Flipkart product reviews', 'Used SHAP to explain predictions at both global and individual review level, not just treating the model as a black box', 'Found and fixed a real model bug using SHAP explanations, boosting negative-class precision from 69% to 87%', 'Aggregated explanations into aspect-filtered, per-product insights like top complaints and top praised features', 'Deployed as an interactive Streamlit app with live sentiment prediction for any typed review', 'Try the live DEMO!'],
+            tech: ['Python', 'Scikit-learn', 'SHAP', 'TF-IDF', 'XGBoost', 'Streamlit', 'Pandas'],
+            github: 'https://github.com/avinps/product-review-analytics', live: 'https://prosights.streamlit.app/',
+            screenshots: ['']
+          })">
+            <img class="project-card-thumb" src="assets/images/project7.png" alt="XAI Review Insights">
+            <div class="project-card-body">
+              <h3>XAI Review Insights — Explainable Sentiment Analytics</h3>
+              <p class="project-card-desc">Explainable sentiment analysis on customer reviews using SHAP, turning model predictions into actionable business insights.</p>
+              <div class="project-card-tags"><span>SHAP</span><span>Scikit-learn</span><span>Streamlit</span><span>XGBoost</span></div>
+              <div class="project-card-cta">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></div>
+            </div>
+          </div>
+
+          <!-- <div class="project-card" onclick="openModal({
             title: 'Revlytics — Realtime AI Customer Review Analyzer',
             desc: 'A real-time customer review analytics platform powered by NLP, RAG, and WebSocket streaming. Analyses sentiment, extracts themes, and answers business questions from review data instantly.',
             points: ['Live WebSocket pipeline for real-time review ingestion and analysis', 'RAG-powered Q&A over review corpus using LangChain + ChromaDB', 'NLP sentiment and topic extraction via HuggingFace Transformers', 'Interactive dashboard with filterable charts and drill-down views','LIVE DEMO SOON! Visit GitHub Repo for detailed description.'],
@@ -1131,7 +1148,7 @@
               <div class="project-card-tags"><span>FastAPI</span><span>RAG</span><span>WebSocket</span><span>React</span></div>
               <div class="project-card-cta">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg></div>
             </div>
-          </div>
+          </div> -->
 
           <div class="project-card" onclick="openModal({
             title: 'AI Health Coach',
@@ -1228,10 +1245,24 @@
         <h2 class="section-title">Certifications</h2>
         <p class="section-subtitle">Industry-recognised certifications that back the skills</p>
         <a href="assets/IBM-DS.jpg" target="_blank" class="cert-card glass">
-          <img src="assets/images/ibm.png" alt="IBM logo">
+          <img src="assets/images/IBM.jpeg" alt="IBM logo">
           <div>
             <span>IBM Data Science Professional Certificate</span>
-            <div class="cert-issuer">IBM · Coursera (Click to view certificate and know more)</div>
+            <div class="cert-issuer">IBM · Coursera (Click to view certificate)</div>
+          </div>
+        </a>
+        <a href="assets/ML.png" target="_blank" class="cert-card glass">
+          <img src="assets/images/DLAI.png" alt="DeepLearning.AI logo">
+          <div>
+            <span>DeepLearning.AI Machine Learning Specialisation</span>
+            <div class="cert-issuer">DeepLearning.AI & Stanford University Online (Click to view certificate)</div>
+          </div>
+        </a>
+        <a href="assets/Maths-MLDS.png" target="_blank" class="cert-card glass">
+          <img src="assets/images/DLAI.png" alt="DeepLearning.AI logo">
+          <div>
+            <span>DeepLearning.AI Mathematics for Machine Learning & Data Science</span>
+            <div class="cert-issuer">DeepLearning.AI (Click to view certificate)</div>
           </div>
         </a>
       </div>
@@ -1255,10 +1286,14 @@
             <div class="exp-body">
               <div class="exp-header">
                 <div class="exp-role">ML Intern</div>
-                <div class="exp-date">2026 — Present</div>
+                <div class="exp-date">May 2026 — August 2026</div>
               </div>
               <div class="exp-company">Indian Institute of Information Technology (IIIT), Kottayam</div>
               <ul class="exp-desc">
+                <li>Built and evaluated ML models (Logistic Regression, Decision Trees, Random Forest, XGBoost) across multiple datasets, applying SHAP, LIME, PDP and ICE for model interpretability</li>
+                <li>Designed an end-to-end sentiment analysis system for 12,500+ Flipkart product reviews, using SHAP explanations to diagnose and fix a model bug, improving negative-class precision from 69% to 87%</li>
+                <li>Turned raw SHAP outputs into aspect-level, business-ready insights (e.g. "customers complain about fit and stitching") by filtering for genuine product aspects rather than generic sentiment words</li>
+                <li>Deployed the full pipeline as an interactive Streamlit web app, enabling non-technical stakeholders to explore per-product sentiment and live predictions</li>
               </ul>
             </div>
           </div>
